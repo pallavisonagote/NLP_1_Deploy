@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+
+</head>
+<body>
+<form action="{{ url_for('home')}}" method="POST">
+
+  <!--for taking input product name-->
+  <label for="fname">Text :</label>
+  <input type="text" id="fname" name="ftext"><br><br>
+
+   <!--submit button-->
+  <input type="submit" value="Submit">
+
+</form>
+
+<br>
+
+<div class="results" align="center">
+
+
+       {% if prediction == 1 %}
+       <h2 style="color: blue ;"> Positive </h2>
+       {% elif prediction == 0 %}
+       <h2 style="color: red ;"> Negative </h2>
+       {% endif %}
+
+</div>
+
+</body>
+</html>
